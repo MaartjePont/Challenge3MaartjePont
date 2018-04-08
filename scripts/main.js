@@ -30,7 +30,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#e6f8ff"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -38,7 +38,7 @@ function initMap() {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#13344a"
+        "color": "#002846"
       }
     ]
   },
@@ -83,7 +83,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#d8f6ff"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -92,7 +92,7 @@ function initMap() {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#1d2c4d"
+        "color": "#002846"
       }
     ]
   },
@@ -110,7 +110,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#e5fffc"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -128,7 +128,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#7eb5be"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -137,7 +137,7 @@ function initMap() {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#1d2c4d"
+        "color": "#002846"
       }
     ]
   },
@@ -155,7 +155,7 @@ function initMap() {
     "elementType": "geometry.stroke",
     "stylers": [
       {
-        "color": "#3c5663"
+        "color": "#002846"
       }
     ]
   },
@@ -164,7 +164,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#90c5d5"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -173,7 +173,7 @@ function initMap() {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#023e58"
+        "color": "#002846"
       }
     ]
   },
@@ -182,7 +182,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#98a5be"
+        "color": "#E9F6FF"
       }
     ]
   },
@@ -191,7 +191,7 @@ function initMap() {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#1d2c4d"
+        "color": "#002846"
       }
     ]
   },
@@ -227,7 +227,7 @@ function initMap() {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#4e6d70"
+        "color": "#E9F6FF"
       }
     ]
   }
