@@ -1,6 +1,7 @@
 body {
 	font-family: avenir;
-	background-color: #B895FF;
+    color: white;
+	background-color: #000B22;
 }
 
 h1 {
@@ -13,19 +14,27 @@ h3 {
     font-size: 35px;
 }
 
+img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 button {
-    font-size: 16px;
-    background-color: #B895FF;
-    padding: 5px;
-    border: 2px solid #000;
+    font-size: 22px;
+    background-color: #000B22;
+    padding: 10px;
+    border: 2px solid #FFEA9A;
     border-radius: 4px;
     text-align: center;
     margin-bottom: 20px;
     display: block;
-    box-shadow: 2px 2px 4px 2px #412083;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    color: white;
 }
 
 #map {
