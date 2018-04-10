@@ -19,8 +19,7 @@ img {
     width: 100%;
     max-width: 400px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 30px auto;
 }
 
 button {
@@ -56,8 +55,12 @@ button {
 }
 
 #route {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 30px; 
+}
+
+#weer {
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 426px) {
