@@ -7,9 +7,38 @@ h1 {
 	text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
+input {
+	font-size: 12px;
+    background-color: #B895FF;
+    padding: 5px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 2px 2px 4px 2px #412083;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
 #map {
 	margin: 0 auto;
 	width: 80vw;
 	height: 80vh;
 	box-shadow: 15px 15px 70px 15px black;
+}
+
+#weather {
+    background-color: transparent;
+    text-align: center;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
 }

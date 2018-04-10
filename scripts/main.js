@@ -15,7 +15,7 @@ var stations = [
 		location: {lat: 28.422798,lng: -80.676603}
 	},  {
 		name: 'Kennedy Space Center, Cape Canaveral, Florida',
-		location: {lat: 28.590303, lng: -80.659333}
+		location: {lat: 28.572976, lng: -80.648973}
 	}
 ];
 
@@ -109,14 +109,14 @@ function initMap() {
     	]
   	},
   	{
-    	"featureType": "poi.park",
-    	"elementType": "geometry.fill",
-    	"stylers": [
-      	{
-        	"color": "#1a3b5d"
-      	}
-    	]
-  	},
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#0f4e4e"
+      }
+    ]
+    },
   	{
     	"featureType": "poi.park",
     	"elementType": "labels.text.fill",
@@ -131,7 +131,7 @@ function initMap() {
     	"elementType": "geometry",
     	"stylers": [
       	{
-        	"color": "#0a3a71"
+        	"color": "#437bba"
       	}
     	]
   	},
@@ -245,13 +245,17 @@ function initMap() {
   	}
 	];
 
+	// initialize direction variables
+	var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+
 	// set optios for map 
 	var mapOptions = {
 		center: {
-			lat: 28.590303, 
-			lng: -80.659333
+			lat: 28.577614, 
+			lng: -80.639576
 		},
-		zoom: 10,
+		zoom: 8,
 		clickableIcons: true,
 		styles: myStyles
 	};
@@ -263,13 +267,98 @@ function initMap() {
 		addStation(stations[i]);
 	}
 
+	// set the map for the direction display 
+	directionsDisplay.setMap(myMap);
+	
+	// call function to get the route
+	calculateAndDisplayRoute(directionsService, directionsDisplay);
+
 }
 
 function addStation(station){
 	new google.maps.Marker({
 		position: station.location,
 		map: myMap,
+		animation: google.maps.Animation.BOUNCE,
 		title: station.name + ' ' + station.ranking + '/5'
 	})
 	console.log(station.name + ' added to map');
 }
+
+// function to get the route
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+	var request = {
+		origin: {lat: 28.651172,lng: -80.687335},
+		destination: {lat: 28.576945,lng: -80.646769},
+		travelMode: 'DRIVING'
+	};
+
+  // als je op de button klikt - show route
+	directionsService.route(request, function(response, status) {
+		if (status === 'OK') {
+			directionsDisplay.setDirections(response); // display the route
+		} else {
+			window.alert('Directions request failed due to ' + status);
+		}
+  });
+}
+
+// Het weer in Florida
+function getAPIdata() {
+
+  var url = "http://api.openweathermap.org/data/2.5/weather";
+  var apiKey ="910e837151d5d789f03c6c3cc16cddfb";
+  var city = "florida";
+
+  // construct request
+  var request = url + "?" + "appid=" + apiKey + "&" + "q=" + city;
+  
+  // get current weather
+  fetch(request)
+  
+  // parse to JSON format
+  .then(function(response) {
+    return response.json();
+  })
+  
+  // render weather per day
+  .then(function(response) {
+    // render weatherCondition
+    onAPISucces(response);  
+  })
+  
+  // catch error
+  .catch(function (error) {
+    onAPIError(error);
+  });
+}
+
+function onAPISucces(response) {
+  // get type of weather in string format
+  var type = response.weather[0].description;
+
+  // get temperature in Celcius
+  var degC = Math.floor(response.main.temp - 273.15);
+
+  // render weather in DOM
+  var weatherBox = document.getElementById('weather');
+  weatherBox.innerHTML = degC + "&#176;C <br>" + type;
+}
+
+function onAPIError() {
+  console.error('Request failed', error);
+  var weatherBox = document.getElementById('weather');
+  weatherBox.className = 'hidden'; 
+}
+
+// init data stream
+document.getElementById("getWeather").onclick = function(){
+  getAPIdata();
+  if (document.getElementById("weather").style.display == 'block')
+  {
+  document.getElementById("weather").style.display = 'none';
+  } else{
+  document.getElementById("weather").style.display = 'block';
+  }
+};
