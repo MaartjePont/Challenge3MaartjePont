@@ -313,7 +313,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 // Het weer in Florida
 function getAPIdata() {
 
-  var url = "http://api.openweathermap.org/data/2.5/weather";
+  var url = "https://api.openweathermap.org/data/2.5/weather";
   var apiKey ="910e837151d5d789f03c6c3cc16cddfb";
   var city = "florida";
 
